@@ -13,7 +13,7 @@ const User = ({ login, avatar_url, html_url, type }) => {
       <div>
         <h1>{login}</h1>
         <h3>{type}</h3>
-        <a href={html_url} class="user__link">Go to Profile</a>
+        <a href={html_url} className="user__link">Go to Profile</a>
       </div>
     </Card>
    

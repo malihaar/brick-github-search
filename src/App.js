@@ -34,7 +34,7 @@ function App() {
       const response = await fetch(url, {
         headers: {
           Accept: "application/json",
-          Authorization: "token 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",
+          Authorization: `token ${process.env.REACT_APP_PERSONAL_ACCESS_TOKEN}`,
         },
       });
       const res = await response.json();
@@ -78,11 +78,11 @@ function App() {
           <>
             {datas.map((item) =>
               type === "users" ? (
-                <div style={{ minWidth: "30%" }}>
-                  <User key={item.id} {...item} />
+                <div style={{ minWidth: "30%" }} key={item.id}>
+                  <User {...item} />
                 </div>
               ) : (
-                <Repo key={item.id} {...item} />
+                <Repo {...item} />
               )
             )}
           </>
